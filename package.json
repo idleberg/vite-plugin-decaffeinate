@@ -32,6 +32,8 @@
     "lint": "concurrently --prefix '{name}' -c 'blue,green' 'npm:lint:*'",
     "prepack": "npm run build",
     "prepare": "husky install",
+				"publish:jsr": "deno publish",
+				"publish:npm": "np --no-yarn --any-branch",
     "release": "np --no-yarn --any-branch",
     "test": "uvu tests --ignore \"expected\" --ignore \"fixtures\" --ignore \"dist\" --ignore \"helper.mjs\""
   },
