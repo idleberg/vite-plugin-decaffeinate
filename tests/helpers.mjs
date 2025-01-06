@@ -3,9 +3,6 @@ import { readFile } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { build } from 'vite'
-import { rollup } from 'rollup';
-import terser from '@rollup/plugin-terser';
-import typescript from '@rollup/plugin-typescript';
 
 import decaffeinate from '../dist/index.js'
 
@@ -62,34 +59,4 @@ export async function viteBuild(input) {
 			decaffeinate(),
 		],
 	});
-}
-
-/**
- * Helper function for Vite build
- * @param input
- * @returns
- */
-export async function rollupBuild(input) {
-	const bundle = await rollup({
-		input: resolve(__dirname, input),
-		treeshake: false,
-		plugins: [
-			decaffeinate(),
-			terser(),
-			typescript({
-				outDir: resolve(__dirname, 'dist/assets'),
-			}),
-		],
-	});
-
-	await bundle.write({
-			dir: resolve(__dirname, 'dist/assets'),
-			entryFileNames: 'rollup--[name]-[hash].js',
-			compact: false,
-
-		});
-
-	if (bundle) {
-		await bundle.close();
-	}
 }

@@ -1,62 +1,20 @@
-# rollup-plugin-decaffeinate
+# vite-plugin-decaffeinate
 
-> A Rollup/Vite plugin for your CoffeeScript projects
+> A Vite plugin for your CoffeeScript projects
 
-[![License](https://img.shields.io/github/license/idleberg/rollup-plugin-decaffeinate?color=blue&style=for-the-badge)](https://github.com/idleberg/rollup-plugin-decaffeinate/blob/main/LICENSE)
-[![Version](https://img.shields.io/npm/v/rollup-plugin-decaffeinate?style=for-the-badge)](https://www.npmjs.org/package/rollup-plugin-decaffeinate)
-[![Build](https://img.shields.io/github/actions/workflow/status/idleberg/rollup-plugin-decaffeinate/tests.yml?style=for-the-badge)](https://github.com/idleberg/rollup-plugin-decaffeinate/actions)
+[![License](https://img.shields.io/github/license/idleberg/vite-plugin-decaffeinate?color=blue&style=for-the-badge)](https://github.com/idleberg/vite-plugin-decaffeinate/blob/main/LICENSE)
+[![Version](https://img.shields.io/npm/v/vite-plugin-decaffeinate?style=for-the-badge)](https://www.npmjs.org/package/vite-plugin-decaffeinate)
+[![Build](https://img.shields.io/github/actions/workflow/status/idleberg/vite-plugin-decaffeinate/tests.yml?style=for-the-badge)](https://github.com/idleberg/vite-plugin-decaffeinate/actions)
 
 ## Installation
 
-`npm install -D rollup-plugin-decaffeinate`
+`npm install -D vite-plugin-decaffeinate`
 
 ## Usage
 
-<details>
-<summary><strong>Rollup</strong></summary>
-
 ```js
 import { defineConfig } from 'vite';
-import decaffeinate from 'rollup-plugin-decaffeinate';
-
-export default {
-    input: 'main.coffee',
-	plugins: [
-		decaffeinate({
-			// the following are the default values
-            disableSuggestionComment: false,
-            disallowInvalidConstructors: false,
-            literate: false,
-            logicalAssignment: false,
-            loose: false,
-            looseComparisonNegation: false,
-            looseDefaultParams: false,
-            looseForExpressions: false,
-            looseForOf: false,
-            looseIncludes: false,
-            looseJSModules: false,
-            noArrayIncludes: false,
-            nullishCoalescing: false,
-            optionalChaining: false,
-            preferLet: false,
-            safeImportFunctionIdentifiers: [],
-            useCS2: false,
-            useJSModules: false,
-		})
-	]
-};
-```
-
-</details>
-
-<details>
-<summary><strong>Vite</strong></summary>
-
-### Vite
-
-```js
-import { defineConfig } from 'vite';
-import decaffeinate from 'rollup-plugin-decaffeinate';
+import decaffeinate from 'vite-plugin-decaffeinate';
 
 export default defineConfig({
 	plugins: [
@@ -84,8 +42,6 @@ export default defineConfig({
 	]
 });
 ```
-
-</details>
 
 ### Options
 
