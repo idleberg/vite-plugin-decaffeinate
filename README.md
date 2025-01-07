@@ -17,9 +17,9 @@ import { defineConfig } from 'vite';
 import decaffeinate from 'vite-plugin-decaffeinate';
 
 export default defineConfig({
-	plugins: [
-		decaffeinate({
-			// the following are the default values
+    plugins: [
+        decaffeinate({
+            // the following are the default values
             disableSuggestionComment: false,
             disallowInvalidConstructors: false,
             literate: false,
@@ -38,8 +38,8 @@ export default defineConfig({
             safeImportFunctionIdentifiers: [],
             useCS2: false,
             useJSModules: false,
-		})
-	]
+        })
+    ]
 });
 ```
 
