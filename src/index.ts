@@ -26,7 +26,7 @@ export default function Plugin(
 ) {
 	return {
 		name: 'decaffeinate',
-		transform(src: string, id: string): DecaffeinateTransform {
+		transform(src: string, id: string): DecaffeinateTransform | undefined {
 			if (!/\.(coffee|cson)$/.test(id)) {
 				return;
 			}
