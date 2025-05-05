@@ -6,8 +6,8 @@
 	"files": {
 		"ignore": [
 			"dist/**",
-			"test/expected/**",
-			"test/fixtures/**",
+			"tests/expected/**",
+			"tests/fixtures/**",
 			"node_modules/**",
 			"package.json",
 			"pnpm-lockfile.yaml"
