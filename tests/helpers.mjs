@@ -1,21 +1,17 @@
-import { glob } from 'glob';
 import { readFile } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { build } from 'vite'
+import { glob } from 'glob';
+import { build } from 'vite';
 
-import decaffeinate from '../dist/index.js'
+import decaffeinate from '../dist/index.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-export const fixtures = glob => join(__dirname, 'fixtures', glob);
-export const expected = glob => join(__dirname, 'expected', glob);
+export const fixtures = (glob) => join(__dirname, 'fixtures', glob);
+export const expected = (glob) => join(__dirname, 'expected', glob);
 
-export const inputs = [
-	'examples.coffee',
-	'js-entrypoint.js',
-	'ts-entrypoint.ts',
-];
+export const inputs = ['examples.coffee', 'js-entrypoint.js', 'ts-entrypoint.ts'];
 
 /**
  * Reads a file by glob pattern
@@ -55,8 +51,6 @@ export async function viteBuild(input) {
 			minify: false,
 		},
 		logLevel: 'silent',
-		plugins: [
-			decaffeinate(),
-		],
+		plugins: [decaffeinate()],
 	});
 }

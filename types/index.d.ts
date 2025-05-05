@@ -4,7 +4,7 @@
 type CommonOptions = {
 	useCS2?: boolean;
 	useJSModules?: boolean;
-}
+};
 
 /**
  * @see {@link https://github.com/decaffeinate/decaffeinate#other-options}
@@ -25,11 +25,11 @@ type OtherOptions = {
 	nullishCoalescing?: boolean;
 	optionalChaining?: boolean;
 	preferLet?: boolean;
-	safeImportFunctionIdentifiers?: string[],
-}
+	safeImportFunctionIdentifiers?: string[];
+};
 
 export type DecaffeinateOptions = CommonOptions & OtherOptions;
 
 export type DecaffeinateTransform = {
 	code: string;
-} | void;
+};
