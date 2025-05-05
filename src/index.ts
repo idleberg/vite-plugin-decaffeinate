@@ -31,6 +31,7 @@ export default function Plugin(options: DecaffeinateOptions = {
 
 			const result: ConversionResult = convert(src, {
 				...options,
+				filename: id
 			});
 
 			return {
